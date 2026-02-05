@@ -69,3 +69,4 @@ Görevin, kıdemli bir frontend developer ve takım lideri için modern, görsel
 - Modüler ve yeniden kullanılabilir bileşen mantığı (framework kullanmadan) uygulanmalı.
 - Kritik bölümleri yorum satırlarıyla açıkla.
 - Harici linkler yoksa yer tutucu (placeholder) bağlantılar ekle.
+- Harici linkler target="\_blank" rel="noopener noreferrer" ile açılmalı.
