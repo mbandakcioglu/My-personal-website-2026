@@ -19,3 +19,11 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./ # Hostingdeki hedef klasör
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github*/**
+            node_modules/**
+            README.md
+            .gitignore
+            AI_GUIDE.md
