@@ -1,9 +1,0 @@
-/* Custom utilities can be added here */
-.vertical-rl {
-    writing-mode: vertical-rl;
-}
-
-/* Hide reCAPTCHA v3 Badge */
-.grecaptcha-badge {
-    visibility: hidden;
-}

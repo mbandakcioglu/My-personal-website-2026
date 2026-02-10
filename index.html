@@ -57,7 +57,6 @@
 	</script>
 
 	<script src="https://cdn.tailwindcss.com"></script>
-	<link rel="stylesheet" href="css/style.css">
 	<script>
 		tailwind.config = {
 			theme: {
@@ -124,6 +123,16 @@
 
 		nav.nav-scrolled a {
 			color: #fafafa;
+		}
+
+		/* Custom utilities */
+		.vertical-rl {
+			writing-mode: vertical-rl;
+		}
+
+		/* Hide reCAPTCHA v3 Badge */
+		.grecaptcha-badge {
+			visibility: hidden !important;
 		}
 	</style>
 </head>
