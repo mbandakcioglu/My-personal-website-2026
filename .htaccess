@@ -127,4 +127,6 @@ Options -Indexes +FollowSymLinks
 	<filesmatch "\.(js)$"> 
 		Header set Cache-Control "max-age=2678400, private" 
 	</filesmatch> 
-</ifmodule>  
+</ifmodule>
+
+  
