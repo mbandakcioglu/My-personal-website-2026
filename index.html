@@ -16,6 +16,7 @@
 					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-P83SK4');</script>
 	<!-- End Google Tag Manager -->
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdIoWIsAAAAAERS_bmzsnSb8U99u88DBGOWb1py"></script>
 	<title>Murat Bandakçıoğlu | Senior Front-end Developer & Team Lead</title>
 	<meta name="description"
 		content="Kıdemli Front-end Developer ve Takım Lideri Murat Bandakçıoğlu'nun kişisel portfolyosu. 12+ yıllık deneyim, React ve modern web teknolojileri uzmanı.">
@@ -151,7 +152,8 @@
 		<!-- Hero Section -->
 		<section id="hero" class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-6">
 			<div class="absolute inset-0 z-0 opacity-20">
-				<img src="images/bg.webp" alt="Background" class="w-full h-full object-cover grayscale">
+				<!-- <img src="images/bg.webp" alt="Background" class="w-full h-full object-cover grayscale"> -->
+				<img src="images/bg/bg.webp" alt="Background" class="w-full h-full object-cover grayscale">
 			</div>
 
 			<div class="relative z-10 text-center">
@@ -408,15 +410,15 @@
 				<div class="max-w-7xl mx-auto text-center reveal">
 					<h2 class="text-5xl md:text-9xl font-black tracking-tighter uppercase mb-20">Hadi Başlayalım</h2>
 
-					<div class="flex flex-col items-center text-center mb-24">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start">
 						<!-- Contact Info -->
-						<div class="reveal max-w-3xl">
+						<div class="reveal text-center md:text-left">
 							<p class="text-2xl mb-12 font-light opacity-90">Bir sonraki büyük projeyi birlikte inşa
 								edelim. Teknik detayları konuşmak veya sadece tanışmak için yazabilirsiniz.</p>
-							<div class="flex flex-col items-center gap-6 text-xl font-bold">
+							<div class="flex flex-col items-center md:items-start gap-6 text-xl font-bold">
 								<a href="mailto:info@bandakcioglu.com"
 									class="hover:underline underline-offset-8 transition-all">info@bandakcioglu.com</a>
-								<div class="flex justify-center gap-8 mt-4">
+								<div class="flex justify-center md:justify-start gap-8 mt-4">
 									<a href="https://www.linkedin.com/in/mbandakcioglu/"
 										class="hover:underline underline-offset-8" target="_blank"
 										rel="nofollow">LinkedIn</a>
@@ -427,38 +429,51 @@
 							</div>
 						</div>
 
-						<!-- Contact Form Mockup -->
-						<div class="reveal hidden">
-							<form class="space-y-6"
-								onsubmit="event.preventDefault(); alert('Mesajınız alındı (Simülasyon).');">
+						<div class="reveal">
+							<form id="contact-form" class="space-y-6" novalidate>
 								<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-									<div class="space-y-2">
-										<label class="text-xs uppercase tracking-widest font-bold opacity-70">Ad
-											Soyad</label>
-										<input type="text"
+									<div class="space-y-2 text-left relative pb-6">
+										<label class="text-xs uppercase tracking-widest font-bold opacity-70">Ad Soyad</label>
+										<input type="text" id="name"
 											class="w-full bg-white/10 border border-white/20 p-4 focus:border-white focus:outline-none transition-colors"
 											placeholder="">
+										<span id="name-error" class="text-[10px] text-white bg-red-600 px-2 py-1 hidden absolute bottom-0 left-0 leading-none">Lütfen adınızı giriniz.</span>
 									</div>
-									<div class="space-y-2">
+									<div class="space-y-2 text-left relative pb-6">
 										<label
 											class="text-xs uppercase tracking-widest font-bold opacity-70">E-posta</label>
-										<input type="email"
+										<input type="email" id="email"
 											class="w-full bg-white/10 border border-white/20 p-4 focus:border-white focus:outline-none transition-colors"
 											placeholder="">
+										<span id="email-error" class="text-[10px] text-white bg-red-600 px-2 py-1 hidden absolute bottom-0 left-0 leading-none">Geçerli bir e-posta adresi giriniz.</span>
 									</div>
 								</div>
-								<div class="space-y-2">
+								<div class="space-y-2 text-left relative pb-6">
 									<label
 										class="text-xs uppercase tracking-widest font-bold opacity-70">Mesajınız</label>
-									<textarea rows="4"
+									<textarea id="message" rows="4"
 										class="w-full bg-white/10 border border-white/20 p-4 focus:border-white focus:outline-none transition-colors"
 										placeholder=""></textarea>
+									<span id="message-error" class="text-[10px] text-white bg-red-600 px-2 py-1 hidden absolute bottom-0 left-0 leading-none">Lütfen mesajınızı yazınız.</span>
 								</div>
+								
+								<input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
+
 								<button type="submit"
 									class="group flex items-center gap-4 bg-white text-brand px-10 py-5 font-black uppercase tracking-widest hover:bg-black hover:text-white transition-all">
 									Gönder
 									<span class="group-hover:translate-x-2 transition-transform">→</span>
 								</button>
+								<div id="form-success" class="hidden mt-6 p-4 bg-white/20 border border-white text-white font-bold text-center">
+									Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağım.
+								</div>
+								<div id="form-error" class="hidden mt-6 p-4 bg-red-600/20 border border-red-600 text-white font-bold text-center"></div>
+								
+								<p class="text-[10px] text-white/80 mt-4 leading-tight">
+									Bu site reCAPTCHA ile korunmaktadır ve Google 
+									<a href="https://policies.google.com/privacy" target="_blank" class="underline hover:text-white">Gizlilik Politikası</a> ve 
+									<a href="https://policies.google.com/terms" target="_blank" class="underline hover:text-white">Hizmet Şartları</a> geçerlidir.
+								</p>
 							</form>
 						</div>
 					</div>
@@ -475,7 +490,7 @@
 				</div>
 			</footer>
 
-			<script src="js/script.js"></script>
+			<script src="js/script.js?v=2"></script>
 </body>
 
 </html>
