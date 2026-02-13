@@ -4,9 +4,12 @@
 node_modules/
 dist/
 *.log
-Murat Bandakçıoğlu Özgeçmiş 2026-01.pdf
-resume_extracted.txt
 .env
+
+
+# local files
+resume_extracted.txt
 config.php
 Arşiv.zip
 alternative.html
+index_backup.html
