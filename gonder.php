@@ -14,14 +14,26 @@ if (!file_exists('config.php')) {
 }
 require_once 'config.php';
 
-// PHPMailer classes
+// Check if PHPMailer files exist before requiring
+$phpMailerPath = __DIR__ . '/PHPMailer';
+
+// Handle potential nested structure (PHPMailer/PHPMailer)
+if (is_dir($phpMailerPath . '/PHPMailer')) {
+    $phpMailerPath = $phpMailerPath . '/PHPMailer';
+}
+
+if (!file_exists($phpMailerPath . '/src/Exception.php')) {
+    http_response_code(500);
+    die(json_encode(['success' => false, 'message' => 'Sunucu hatası: ' . $phpMailerPath . '/src/Exception.php bulunamadı. Lütfen PHPMailer klasörünün yüklü olduğundan emin olun.']));
+}
+
+require $phpMailerPath . '/src/Exception.php';
+require $phpMailerPath . '/src/PHPMailer.php';
+require $phpMailerPath . '/src/SMTP.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
 
 $subjectPrefix = 'bandakcioglu.com İletişim Formu: ';
 
