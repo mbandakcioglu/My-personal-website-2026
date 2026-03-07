@@ -37,10 +37,9 @@ Options -Indexes +FollowSymLinks
 	RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
 	RewriteRule ^ https://www.bandakcioglu.com%{REQUEST_URI} [NS,R=301,L]
 
-	RewriteCond %{HTTP:if-modified-since} .
-	RewriteRule . /not_modified.php [L]
 
 </IfModule>
+
 
 
 # Enable GZIP 
