@@ -92,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				const originalBtnText = submitBtn.innerHTML;
 
 				submitBtn.disabled = true;
-				submitBtn.innerHTML = 'Gönderiliyor...';
+				const isEn = document.documentElement.lang === 'en';
+				submitBtn.innerHTML = isEn ? 'Sending...' : 'Gönderiliyor...';
 
 				grecaptcha.ready(function() {
 					grecaptcha.execute('6LdIoWIsAAAAAERS_bmzsnSb8U99u88DBGOWb1py', {action: 'submit'}).then(function(token) {
@@ -104,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 							recaptcha: token
 						};
 
-						fetch('gonder.php', {
+						fetch('/gonder.php', {
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json',
