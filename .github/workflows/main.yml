@@ -21,7 +21,7 @@ jobs:
           server-dir: ./ # Hostingdeki hedef klasör
           timeout: 190000
           #port: 21
-          #protocol: ftp 
+          #protocol: ftp
           exclude: |
             **/.git*
             **/.git*/**
@@ -31,3 +31,4 @@ jobs:
             .gitignore
             AI_GUIDE.md
             kisisel_web_sitesi_prompt_statiktir.md
+            .agent/**
