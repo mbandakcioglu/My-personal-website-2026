@@ -160,4 +160,24 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
+
+	// Email Obfuscation
+	const initEmailObfuscation = () => {
+		document.querySelectorAll('[data-user][data-domain]').forEach(el => {
+			const user = el.getAttribute('data-user');
+			const domain = el.getAttribute('data-domain');
+			const email = `${user}@${domain}`;
+			
+			if (el.tagName === 'A') {
+				el.href = `mailto:${email}`;
+			}
+			
+			const textSpan = el.querySelector('.email-text');
+			if (textSpan) {
+				textSpan.textContent = email;
+			}
+		});
+	};
+
+	initEmailObfuscation();
 });
