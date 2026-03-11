@@ -1,11 +1,11 @@
 .DS_Store
-.agent/
 .gemini/
 node_modules/
 dist/
 *.log
 .env
 
+.git/info/exclude
 
 # local files
 resume_extracted.txt
