@@ -1,139 +1,135 @@
-#
-# Setting Wolf CMS requirements
-#
-# On some server configurations you may need to comment out one or more of
-# the three lines below due to server limitations.
-#
+# ----------------------------------------------------------------------
+# | GÜVENLİK AYARLARI                                                  |
+# ----------------------------------------------------------------------
 
-#php_flag magic_quotes_gpc off ## Removed in php5.4
+# Sunucu bilgilerini gizle
+ServerSignature Off
+
+# Dizin listelemeyi kapat
+Options -Indexes
+
+# Karakter setini UTF-8 olarak ayarla
 AddDefaultCharset UTF-8
-Options -Indexes +FollowSymLinks
 
-#
-# Setting rewrite rules
-#
+# Hassas dosyalara erişimi engelle
+<FilesMatch "^(\.htaccess|\.git|\.env|config\.php|README\.md|AI_GUIDE\.md)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
 
-
-<IfModule mod_rewrite.c>
-	RewriteEngine On
-	
-	# Canonical fixes
-	RewriteCond %{HTTP_HOST} ^bandakcioglu.com
-	RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
-	RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-	RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
-	RewriteRule (.*) https://www.bandakcioglu.com/$1 [R=301,L]
-
-	RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
-	RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
-	RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-	RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
-	RewriteRule ^index\.php$ https://www.bandakcioglu.com [R=301,L]
-	
-	RewriteCond %{SERVER_PORT} !=443
-	#RewriteRule ^ https://www.bandakcioglu.com%{REQUEST_URI} [NS,R,L]
-	RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
-	RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-	RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
-	RewriteRule ^ https://www.bandakcioglu.com%{REQUEST_URI} [NS,R=301,L]
-
-
-</IfModule>
-
-
-
-# Enable GZIP 
-<ifmodule mod_deflate.c> 
-	AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript 
-	BrowserMatch ^Mozilla/4 gzip-only-text/html 
-	BrowserMatch ^Mozilla/4\.0[678] no-gzip 
-	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html 
-</ifmodule> 
-
-# Expires Headers - 2678400s = 31 days 
-#<ifmodule mod_expires.c> 
-#	ExpiresActive On 
-#	ExpiresDefault "access plus 2678400 seconds" 
-#	ExpiresByType text/html "access plus 7200 seconds" 
-#	ExpiresByType image/gif "access plus 2678400 seconds" 
-#	ExpiresByType image/jpeg "access plus 2678400 seconds" 
-#	ExpiresByType image/png "access plus 2678400 seconds" 
-#	ExpiresByType text/css "access plus 750000 seconds" 
-#	ExpiresByType text/javascript "access plus 2678400 seconds" 
-#	ExpiresByType application/x-javascript "access plus 2678400 seconds" 
-#</ifmodule> 
-<IfModule mod_expires.c>
-	# Enable expirations
-	ExpiresActive On
-	# Default directive
-	ExpiresDefault "access plus 1 month"
-	# My favicon
-	ExpiresByType image/x-icon "access plus 1 year"
-	# Images
-	ExpiresByType image/gif "access plus 1 month"
-	ExpiresByType image/png "access plus 1 month"
-	ExpiresByType image/jpg "access plus 1 month"
-	ExpiresByType image/jpeg "access plus 1 month"
-	# CSS
-	ExpiresByType text/css "access 1 month"
-	# Data interchange
-	ExpiresByType application/json "access plus 0 seconds"
-	ExpiresByType application/xml "access plus 0 seconds"
-	ExpiresByType text/xml "access plus 0 seconds"
-	# Javascript
-	ExpiresByType application/javascript "access plus 1 year"
-	# Favicon (cannot be renamed!) and cursor images
-	# HTML components (HTCs)
-	ExpiresByType text/x-component "access plus 1 month"
-	# HTML
-	ExpiresByType text/html "access plus 0 seconds"
-	# Manifest files
-	ExpiresByType application/x-web-app-manifest+json "access plus 0 seconds"
-	ExpiresByType text/cache-manifest "access plus 0 seconds"
-	# Media
-	ExpiresByType audio/ogg "access plus 1 month"
-	ExpiresByType image/gif "access plus 1 month"
-	ExpiresByType image/jpeg "access plus 1 month"
-	ExpiresByType image/png "access plus 1 month"
-	ExpiresByType video/mp4 "access plus 1 month"
-	ExpiresByType video/ogg "access plus 1 month"
-	ExpiresByType video/webm "access plus 1 month"
-	# Web feeds
-	ExpiresByType application/atom+xml "access plus 1 hour"
-	ExpiresByType application/rss+xml "access plus 1 hour"
-	# Web fonts
-	ExpiresByType application/font-woff "access plus 1 month"
-	ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
-	ExpiresByType application/x-font-ttf "access plus 1 month"
-	ExpiresByType font/opentype "access plus 1 month"
-	ExpiresByType image/svg+xml "access plus 1 month"
-</IfModule> 
-# Cache Headers 
-<ifmodule mod_headers.c> 
-	# Cache specified files for 31 days 
-	<filesmatch "\.(ico|flv|jpg|jpeg|png|gif|css|swf)$"> 
-		Header set Cache-Control "max-age=2678400, public" 
-	</filesmatch> 
-	# Cache HTML files for a couple hours 
-	<filesmatch "\.(html|htm)$"> 
-		Header set Cache-Control "max-age=7200, private, must-revalidate" 
-	</filesmatch> 
-	# Cache PDFs for a day 
-	<filesmatch "\.(pdf)$"> 
-		Header set Cache-Control "max-age=86400, public" 
-	</filesmatch> 
-	# Cache Javascripts for 31 days 
-	<filesmatch "\.(js)$"> 
-		Header set Cache-Control "max-age=2678400, private" 
-	</filesmatch> 
-</ifmodule>
-
-# Security Headers
+# Güvenlik Başlıkları (Headers)
 <IfModule mod_headers.c>
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Content-Type-Options "nosniff"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # Content Security Policy (Orijinal yapı korundu)
     Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.google.com https://www.gstatic.com https://cdn.tailwindcss.com https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; connect-src 'self' https://www.google-analytics.com;"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | YÖNLENDİRME KURALLARI (REWRITE RULES)                              |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # SSL Sertifika Doğrulama İstisnaları (cPanel/Comodo)
+    RewriteCond %{REQUEST_URI} ^/[0-9]+\..+\.cpaneldcv$ [OR]
+    RewriteCond %{REQUEST_URI} ^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$ [OR]
+    RewriteCond %{REQUEST_URI} ^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+    RewriteRule ^ - [L]
+
+    # HTTPS ve WWW Zorunluluğu
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^bandakcioglu\.com$ [NC]
+    RewriteRule ^(.*)$ https://www.bandakcioglu.com/$1 [L,R=301]
+
+    # index.php -> / Yönlendirmesi
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+    RewriteRule ^index\.php$ https://www.bandakcioglu.com/ [R=301,L]
+
+    # .html Uzantısını Kaldır (Örn: /iletisim.html -> /iletisim)
+    # 1. Uzantısız URL gelirse ve arkada .html dosyası varsa onu göster
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+
+    # 2. .html uzantılı bir talep gelirse, uzantısız haline yönlendir (SEO için)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.+)\.html\ HTTP/
+    RewriteRule ^(.+)\.html$ https://www.bandakcioglu.com/$1 [R=301,L]
+
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | PERFORMANS: SIKIŞTIRMA (GZIP)                                      |
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    # Sıkıştırılacak MIME tipleri
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/font-woff
+    AddOutputFilterByType DEFLATE application/font-woff2
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | PERFORMANS: TARAYICI ÖNBELLEĞE ALMA (EXPIRES HEADERS)              |
+# ----------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML (Önbelleğe alma veya kısa süreli tut)
+    ExpiresByType text/html "access plus 0 seconds"
+
+    # CSS, JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+
+    # Resimler
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+
+    # Fontlar
+    ExpiresByType font/opentype "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+    ExpiresByType application/x-font-ttf "access plus 1 month"
+    ExpiresByType application/font-woff "access plus 1 month"
+    ExpiresByType application/font-woff2 "access plus 1 month"
+
+    # Diğer
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# Cache-Control başlıklarını ekle (mod_expires ile uyumlu çalışır)
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "max-age=0, private, must-revalidate"
+    </FilesMatch>
 </IfModule>
