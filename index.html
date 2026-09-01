@@ -38,35 +38,53 @@
 	<meta property="og:url" content="https://www.bandakcioglu.com/" />
 	<meta property="og:title" content="Murat Bandakçıoğlu | Lead Front-end Developer & Team Lead" />
 	<meta property="og:description" content="15 yıllık deneyimle modern frontend yapıları ve ekip liderliği." />
-	<meta property="og:image" content="https://bandakcioglu.com/images/murat-bandakcioglu-logo.png" />
+	<meta property="og:image" content="https://www.bandakcioglu.com/images/murat-bandakcioglu-logo.png" />
 	<meta property="og:site_name" content="Murat Bandakçıoğlu" />
 	<meta property="og:locale" content="tr_TR" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://bandakcioglu.com/" />
+	<meta property="twitter:url" content="https://www.bandakcioglu.com/" />
 	<meta property="twitter:title" content="Murat Bandakçıoğlu | Lead Front-end Developer & Team Lead" />
 	<meta property="twitter:description" content="15 yıllık deneyimle modern frontend yapıları ve ekip liderliği." />
-	<meta property="twitter:image" content="https://bandakcioglu.com/images/murat-bandakcioglu-logo.png" />
+	<meta property="twitter:image" content="https://www.bandakcioglu.com/images/murat-bandakcioglu-logo.png" />
 
 	<!-- JSON-LD Schema -->
 	<script type="application/ld+json">
 	{
 	  "@context": "https://schema.org",
-	  "@type": "Person",
-	  "name": "Murat Bandakçıoğlu",
-	  "jobTitle": "Lead Front-end Developer & Team Lead",
-	  "url": "https://www.bandakcioglu.com",
-	  "worksFor": {
-	    "@type": "Organization",
-	    "name": "Webicha",
-	    "url": "https://www.webicha.com"
-	  },
-	  "sameAs": [
-	    "https://www.linkedin.com/in/mbandakcioglu/",
-	    "https://github.com/mbandakcioglu/"
-	  ],
-	  "knowsAbout": ["Frontend Development", "React", "JavaScript", "Team Leadership", "Web Performance", "UI/UX"]
+	  "@graph": [
+	    {
+	      "@type": "ProfilePage",
+	      "@id": "https://www.bandakcioglu.com/#profilepage",
+	      "url": "https://www.bandakcioglu.com/",
+	      "name": "Murat Bandakçıoğlu | Lead Front-end Developer & Team Lead",
+	      "mainEntity": { "@id": "https://www.bandakcioglu.com/#person" }
+	    },
+	    {
+	      "@type": "Person",
+	      "@id": "https://www.bandakcioglu.com/#person",
+	      "name": "Murat Bandakçıoğlu",
+	      "jobTitle": "Lead Front-end Developer & Team Lead",
+	      "url": "https://www.bandakcioglu.com",
+	      "image": "https://www.bandakcioglu.com/images/murat-bandakcioglu.webp",
+	      "address": {
+	        "@type": "PostalAddress",
+	        "addressLocality": "Istanbul",
+	        "addressCountry": "TR"
+	      },
+	      "worksFor": {
+	        "@type": "Organization",
+	        "name": "Webicha",
+	        "url": "https://www.webicha.com"
+	      },
+	      "sameAs": [
+	        "https://www.linkedin.com/in/mbandakcioglu/",
+	        "https://github.com/mbandakcioglu/"
+	      ],
+	      "knowsAbout": ["Frontend Development", "React", "TypeScript", "Next.js", "Team Leadership", "Web Performance", "UI/UX", "Design Systems"]
+	    }
+	  ]
 	}
 	</script>
 
@@ -569,7 +587,7 @@
 				</div>
 
 				<div class="ledger reveal">
-					<div class="entry">
+					<article class="entry">
 						<div class="entry__date mono">02.2026 – Günümüz</div>
 						<div class="entry__role">
 							<h3>
@@ -582,18 +600,18 @@
 							<p>Özel yazılımlar, SaaS platformları ve modern web uygulamalarına odaklanan dijital ürün stüdyosu. Ürün stratejisi, frontend mühendisliği, teknik mimari ve işletmeler ile girişimler için ölçeklenebilir çözümler sunulması süreçlerini yönetiyorum.</p>
 							<div class="refs">WEB: <a href="https://www.webicha.com" target="_blank" rel="noopener noreferrer">www.webicha.com</a></div>
 						</div>
-					</div>
+					</article>
 
-					<div class="entry">
+					<article class="entry">
 						<div class="entry__date mono">01.2024 – 02.2026</div>
 						<div class="entry__role">
 							<h3>Mar.ca</h3>
 							<div class="org">Sr. Web Developer</div>
 							<p>Modern web teknolojilerini WordPress ekosistemiyle buluşturarak; grup şirketlerine ait web sitelerini ve özel tasarımları yüksek performanslı temalara dönüştürdüm. Pug ve Modern CSS tabanlı boilerplate yapıları üzerinden, SEO uyumlu ve Lighthouse skorları optimize edilmiş kurumsal projeler inşa ettim.</p>
 						</div>
-					</div>
+					</article>
 
-					<div class="entry">
+					<article class="entry">
 						<div class="entry__date mono">05.2022 – 07.2023</div>
 						<div class="entry__role">
 							<h3>Kodzilla</h3>
@@ -601,9 +619,9 @@
 							<p>Global ilaç devleri için erişilebilirlik (a11y) standartlarını merkeze alan, ölçeklenebilir UI sistemleri tasarladım. Modern JavaScript bileşen mimarisiyle kullanıcı deneyimini teknik mükemmeliyetle birleştirdim.</p>
 							<div class="refs">REFERANSLAR: <span>GSK (GlaxoSmithKline), Novartis, Roche.</span></div>
 						</div>
-					</div>
+					</article>
 
-					<div class="entry">
+					<article class="entry">
 						<div class="entry__date mono">09.2018 – 03.2022</div>
 						<div class="entry__role">
 							<h3>Related Digital</h3>
@@ -611,9 +629,9 @@
 							<p>Yüksek trafikli platformların teknik optimizasyon süreçlerini yöneterek, grup şirketlerine ait web siteleri için tasarımdan kodun son satırına kadar anahtar teslim WordPress entegrasyonları gerçekleştirdim. İçerik yönetim sistemlerinde ölçeklenebilirliği standart haline getirdim.</p>
 							<div class="refs">REFERANSLAR: <span>Related Digital, Euromsg, Euromsg Express.</span></div>
 						</div>
-					</div>
+					</article>
 
-					<div class="entry">
+					<article class="entry">
 						<div class="entry__date mono">05.2011 – 09.2018</div>
 						<div class="entry__role">
 							<h3>Madebycat</h3>
@@ -621,34 +639,34 @@
 							<p>10 kişilik bir ekibin teknik vizyonunu şekillendirirken, 'Code Review' standartlarını ve Ar-Ge süreçlerini departman kültürü haline getirdim. Teknik rehberlik ve süreç inovasyonu ile ekip verimliliğini maksimize ettim.</p>
 							<div class="refs">REFERANSLAR: <span>Avivasa, Anadolu Sigorta, Garanti Ödeme Sistemleri, Beymen, Boyner, Denizbank, Doğuş Grubu, Digitürk, Miles&amp;Smiles, Nef, Oyak Çimento, Sabancı Vakfı, The House Cafe.</span></div>
 						</div>
-					</div>
+					</article>
 
-					<div class="entry compact">
+					<article class="entry compact">
 						<div class="entry__date mono">11.2008 – 05.2011</div>
 						<div class="entry__role">
 							<h3>Digital Graphics</h3>
 							<div class="org">HTML Developer</div>
 							<p>İstanbul</p>
 						</div>
-					</div>
+					</article>
 
-					<div class="entry compact">
+					<article class="entry compact">
 						<div class="entry__date mono">11.2007 – 11.2008</div>
 						<div class="entry__role">
 							<h3>EkoPC</h3>
 							<div class="org">Web Master</div>
 							<p>İstanbul</p>
 						</div>
-					</div>
+					</article>
 
-					<div class="entry compact">
+					<article class="entry compact">
 						<div class="entry__date mono">09.2003 – 08.2005</div>
 						<div class="entry__role">
 							<h3>Güral Porselen</h3>
 							<div class="org">Model Tasarım</div>
 							<p>Kütahya</p>
 						</div>
-					</div>
+					</article>
 				</div>
 			</section>
 
