@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="tr">
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta name="google-site-verification" content="rC-QXw8ctUcUx-idS9prRJ2HLJd4X2WXzaPDh87-_3A" />
+
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-P83SK4');</script>
+	<!-- End Google Tag Manager -->
+
+	<title>Murat Bandakçıoğlu | Lead Front-end Developer & Team Lead</title>
+	<meta name="description"
+		content="Kıdemli Front-end Developer ve Takım Lideri Murat Bandakçıoğlu'nun kişisel portfolyosu. 15 yıllık deneyim, React ve modern web teknolojileri uzmanı.">
+	<link rel="canonical" href="https://www.bandakcioglu.com/">
+	<link rel="alternate" hreflang="tr" href="https://www.bandakcioglu.com/" />
+	<link rel="alternate" hreflang="en" href="https://www.bandakcioglu.com/en/" />
+	<link rel="alternate" hreflang="x-default" href="https://www.bandakcioglu.com/" />
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preload" as="image" href="images/murat-bandakcioglu.webp" fetchpriority="high">
+	<meta name="last-modified" content="2026-03-08">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.bandakcioglu.com/">
+	<meta property="og:title" content="Murat Bandakçıoğlu | Lead Front-end Developer & Team Lead">
+	<meta property="og:description" content="15 yıllık deneyimle modern frontend yapıları ve ekip liderliği.">
+	<meta property="og:image" content="https://bandakcioglu.com/images/murat-bandakcioglu-logo.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://bandakcioglu.com/">
+	<meta property="twitter:title" content="Murat Bandakçıoğlu | Lead Front-end Developer & Team Lead">
+	<meta property="twitter:description" content="15 yıllık deneyimle modern frontend yapıları ve ekip liderliği.">
+	<meta property="twitter:image" content="https://bandakcioglu.com/images/murat-bandakcioglu-logo.png">
+
+	<!-- JSON-LD Schema -->
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "Person",
+	  "name": "Murat Bandakçıoğlu",
+	  "jobTitle": "Lead Front-end Developer & Team Lead",
+	  "url": "https://www.bandakcioglu.com",
+	  "worksFor": {
+	    "@type": "Organization",
+	    "name": "Webicha",
+	    "url": "https://www.webicha.com"
+	  },
+	  "sameAs": [
+	    "https://www.linkedin.com/in/mbandakcioglu/",
+	    "https://github.com/mbandakcioglu/"
+	  ],
+	  "knowsAbout": ["Frontend Development", "React", "JavaScript", "Team Leadership", "Web Performance", "UI/UX"]
+	}
+	</script>
+	<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;600;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet" />
+	<script id="tailwind-config">
+		tailwind.config = {
+			darkMode: "class",
+			theme: {
+				extend: {
+					screens: {
+						"xs": "425px",
+					},
+					colors: {
+						"primary": "#ccff00",
+						"background-dark": "#050505",
+						"card-dark": "#0a0a0a",
+					},
+					fontFamily: {
+						"display": ["Manrope", "sans-serif"],
+						"serif": ["Playfair Display", "serif"]
+					},
+				},
+			},
+		}
+	</script>
+	<style type="text/tailwindcss">
+		body {
+            font-family: "Manrope", sans-serif;
+            background-color: #050505;
+            scrollbar-width: thin;
+            scrollbar-color: #cf0 #050505
+        }
+        .glass-modal {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(204, 255, 0, 0.1)
+        }
+        .bento-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+        }
+        .bento-card:hover {
+            border-color: #cf0;
+            background: #0f0f0f
+        }
+        #modal-toggle:checked ~ #project-modal {
+            display: flex
+        }
+        #modal-toggle:checked ~ main {
+            filter: blur(40px);
+            pointer-events: none
+        }
+
+        .cyber-accent {
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.15)
+        }
+        .grain-texture::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB8A52K8qFm6DfjmTSywRCAVbyKu_m0qJ_BqweVVsKxUhZ2PCXWOy3VJAOP2tCaIUCxjcmor2uf4RmXB1fkmGOwE5o0B_DMofhYJF1O_VVE7uSNWFnVSSlutXaIiB_HytZsPb_8_c6l3XxTsZJUDg-nz9D3nborz0Sv2lxVBHKS_hcS1uT9w2zjNIlABy409t9z-ryRDHHK0q70wyz2cz6yj1JF-vtGpGPJJZvN1LBGSqvGNdvO9l7lJyKqhWNbU2vvgDjnE9NvzBg);
+            opacity: 0.15;
+            pointer-events: none;
+            mix-blend-mode: overlay
+        }
+        .portrait-mask {
+            clip-path: polygon(10% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 10%)
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        input, textarea {
+            background: transparent !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, textarea:focus {
+            border-color: #ccff00 !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        input:hover, textarea:hover {
+            border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+				/* Hide reCAPTCHA v3 Badge */
+		.grecaptcha-badge {
+			visibility: hidden !important;
+		}
+    </style>
+</head>
+
+<body class="text-slate-100 selection:bg-primary selection:text-black overflow-x-hidden">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P83SK4" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<!--
+	<input class="hidden peer" id="modal-toggle" type="checkbox" />
+	<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-12" id="project-modal">
+		<label class="absolute inset-0 bg-black/90 cursor-crosshair" for="modal-toggle"></label>
+		<div class="relative w-full max-w-4xl glass-modal rounded-none p-8 md:p-16 overflow-y-auto max-h-[90vh] shadow-2xl border border-white/5">
+			<label class="absolute top-8 right-8 text-slate-400 hover:text-primary cursor-pointer transition-colors" for="modal-toggle">
+				<span class="material-symbols-outlined text-4xl">close</span>
+			</label>
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+				<div class="lg:col-span-8">
+					<p class="text-primary font-bold tracking-[0.4em] uppercase mb-4 text-[10px]" lang="en">Anahtar Proje • Mar.ca Ecosystem</p>
+					<h2 class="font-serif text-5xl md:text-6xl text-white mb-8 leading-tight">WordPress Tabanlı Özel Temalaştırma</h2>
+					<div class="space-y-8">
+						<div>
+							<h4 class="text-primary uppercase tracking-widest text-sm font-black mb-3">Teknik Zorluk</h4>
+							<p class="text-slate-400 text-lg leading-relaxed font-light">
+								Pug ve Modern CSS (PostCSS) iş akışlarını kullanarak, WordPress'in geleneksel yapısını yüksek performanslı bir Headless-like deneyime dönüştürmek. Lighthouse skorlarını %100'e ulaştırırken zengin medya içeriklerini optimize etmek.
+							</p>
+						</div>
+						<div class="pt-8 border-t border-white/5">
+							<h4 class="text-slate-500 uppercase tracking-widest text-sm font-bold mb-4">Teknoloji Yığını</h4>
+							<div class="flex flex-wrap gap-2">
+								<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-[11px] font-bold">PUG</span>
+								<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-[11px] font-bold">MODERN CSS</span>
+								<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-[11px] font-bold">LIGHTHOUSE</span>
+								<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-[11px] font-bold">PHP</span>
+								<span class="px-3 py-1 bg-primary/10 border border-primary/20 text-primary rounded-full text-[11px] font-bold">WEBPACK</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lg:col-span-4 flex flex-col justify-end">
+					<div class="flex flex-col gap-4">
+						<a class="w-full bg-primary text-black hover:bg-white px-8 py-5 font-black uppercase text-xs tracking-widest flex items-center justify-center gap-3 transition-all" href="#">
+							Canlı Proje <span class="material-symbols-outlined">north_east</span>
+						</a>
+						<a class="w-full border border-white/10 hover:border-primary text-white px-8 py-5 font-black uppercase text-sm tracking-widest flex items-center justify-center gap-3 transition-all" href="#">
+							Repository <span class="material-symbols-outlined">code</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    -->
+
+
+	<nav id="main-nav" class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-screen-2xl h-20 border-b border-white/5 bg-background-dark/80 backdrop-blur-md z-50 flex items-center justify-between px-12 lg:px-24">
+		<div class="flex items-center gap-4">
+			<div class="w-8 h-8 bg-primary rounded-sm flex items-center justify-center text-black font-black">M</div>
+			<span class="hidden xl:block text-white font-bold tracking-tighter text-lg uppercase">Bandakçıoğlu</span>
+		</div>
+		<div class="flex gap-8 xl:gap-12 items-center">
+			<div class="hidden xl:flex gap-12 items-center">
+				<a class="text-sm font-black uppercase tracking-[0.3em] hover:text-primary transition-colors" href="#hero">Ana Sayfa</a>
+				<a class="text-sm font-black uppercase tracking-[0.3em] hover:text-primary transition-colors" href="#journey">Deneyim</a>
+				<a class="text-sm font-black uppercase tracking-[0.3em] hover:text-primary transition-colors" href="#arsenal">Teknik</a>
+				<a class="text-sm font-black uppercase tracking-[0.3em] hover:text-primary transition-colors" href="#beyond">Yaşam</a>
+			</div>
+			<div class="flex gap-1.5 xs:gap-2 items-center text-[11px] xs:text-sm font-black uppercase tracking-[0.2em] xs:tracking-[0.3em] xl:ml-4">
+				<a href="/" class="text-primary pointer-events-none">TR</a>
+				<span class="text-slate-600">|</span>
+				<a href="/en/" class="text-slate-400 hover:text-primary transition-colors">EN</a>
+			</div>
+			<a class="px-3 xl:px-6 py-2 border border-primary text-primary text-sm font-black uppercase tracking-[0.3em] hover:bg-primary hover:text-black transition-all flex items-center gap-2" href="#contact">
+				<span class="hidden xs:inline">İletişim</span>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 xs:hidden"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
+			</a>
+		</div>
+	</nav>
+	<main class="transition-all duration-1000 max-w-screen-2xl mx-auto">
+		<section class="min-h-screen flex items-center px-12 lg:px-24 relative pt-32 md:pt-20" id="hero">
+			<div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+			<div class="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+				<div class="lg:col-span-8">
+					<p class="text-primary font-black tracking-[0.4em] uppercase mb-8 text-sm flex items-center gap-4" lang="en">
+						<span class="w-8 h-px bg-primary"></span> Senior Front-end Developer &amp; Team Lead
+					</p>
+
+					<div class="relative mb-12 reveal" id="hero-content">
+						<h1 class="font-serif text-[42px] xs:text-5xl sm:text-6xl md:text-7xl lg:text-[72px] xl:text-[96px] 2xl:text-[120px] leading-[0.85] text-white tracking-tighter relative z-20">
+							MURAT <br />
+							BANDAKÇIOĞLU
+						</h1>
+					</div>
+					<div class="max-w-4xl relative z-20 reveal">
+						<p class="text-slate-400 text-xl lg:text-2xl font-light leading-relaxed border-l border-primary/30 pl-8">
+							Yirmi yılı aşkın deneyimiyle dijital platformların evrimine tanıklık eden, üst düzey frontend geliştirici ve takım lideri. HTML, CSS, JavaScript ve React ekosistemini kullanan, komponent mimarisi ve ekip koordinasyonu süreçlerinde deneyimli bir profesyonel. Evli ve iki kedi babası.
+						</p>
+					</div>
+				</div>
+				<div class="lg:col-span-4 relative flex justify-center lg:justify-end mt-12 lg:mt-0 reveal">
+					<div class="relative w-full max-w-[400px] group">
+						<div class="absolute -inset-4 border border-white/5 portrait-mask translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-700"></div>
+						<div class="relative z-10 portrait-mask overflow-hidden bg-slate-900 grain-texture aspect-[3/4] border border-white/10">
+							<img alt="Murat Bandakçıoğlu - Kıdemli Frontend Geliştirici" fetchpriority="high" class="w-full h-full object-cover grayscale brightness-75 contrast-125 hover:scale-105 transition-transform duration-[2s] ease-out" src="images/murat-bandakcioglu.webp" />
+							<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-60"></div>
+							<div class="absolute bottom-6 left-6 right-6">
+								<div class="flex items-center gap-3">
+									<div class="h-px flex-1 bg-primary/30"></div>
+									<span class="text-[9px] font-black text-primary uppercase tracking-[0.5em] whitespace-nowrap" lang="en">Senior Frontend Developer</span>
+								</div>
+							</div>
+						</div>
+						<div class="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 border border-primary/20 backdrop-blur-sm flex items-center justify-center z-20">
+							<span class="text-primary font-black text-2xl">M.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="py-32 px-12 lg:px-24 border-t border-white/5" id="journey">
+			<div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8 reveal">
+				<div>
+					<h2 class="font-serif text-6xl text-white mb-4 italic leading-none">Deneyim</h2>
+					<p class="text-slate-500 max-w-xl text-lg">Senior teknoloji liderliği ve kreatif geliştirme arasında köprü kurduğum profesyonel duraklarım.</p>
+				</div>
+				<!--div class="text-primary font-black text-8xl opacity-10 select-none hidden lg:block italic">20+ Yıl</div-->
+			</div>
+			<div class="grid grid-cols-1 md:grid-cols-12 gap-4 h-auto">
+				<div class="md:col-span-7 md:row-span-1 bento-card p-10 flex flex-col justify-between group reveal">
+					<div class="flex justify-between items-start">
+
+						<span class="text-slate-600 font-mono text-xs uppercase tracking-widest">02.2026 – Günümüz</span>
+					</div>
+					<div>
+						<h3 class="text-4xl font-serif text-white mb-2 group-hover:text-primary transition-colors">
+							<a href="https://www.webicha.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2">
+								Webicha
+								<svg class="w-5 h-5 text-primary opacity-80 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+							</a>
+						</h3>
+						<p class="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Kurucu</p>
+						<p class="text-slate-400 leading-relaxed font-light mb-4">Özel yazılımlar, SaaS platformları ve modern web uygulamalarına odaklanan dijital ürün stüdyosu. Ürün stratejisi, frontend mühendisliği, teknik mimari ve işletmeler ile girişimler için ölçeklenebilir çözümler sunulması süreçlerini yönetiyorum.</p>
+						<p class="text-slate-500 text-xs font-bold leading-relaxed border-l-2 border-primary/20 pl-3">
+							<span class="text-primary/60">WEB:</span> <a href="https://www.webicha.com" target="_blank" rel="noopener noreferrer" class="text-primary/80 hover:text-primary underline">www.webicha.com</a>
+						</p>
+					</div>
+				</div>
+				<div class="md:col-span-5 md:row-span-1 bento-card p-10 flex flex-col justify-between group reveal">
+					<div class="flex justify-between items-start">
+
+						<span class="text-slate-600 font-mono text-xs uppercase tracking-widest">01.2024 – 02.2026</span>
+					</div>
+					<div>
+						<h3 class="text-3xl font-serif text-white mb-2 group-hover:text-primary transition-colors">Mar.ca</h3>
+						<p class="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Sr. Web Developer</p>
+						<p class="text-slate-400 text-sm leading-relaxed">Modern web teknolojilerini WordPress ekosistemiyle buluşturarak; grup şirketlerine ait web sitelerini ve özel tasarımları yüksek performanslı temalara dönüştürdüm. Pug ve Modern CSS tabanlı boilerplate yapıları üzerinden, SEO uyumlu ve Lighthouse skorları optimize edilmiş kurumsal projeler inşa ettim.</p>
+					</div>
+				</div>
+				<div class="md:col-span-5 md:row-span-1 bento-card p-10 flex flex-col justify-between group reveal">
+					<div class="flex justify-between items-start">
+
+						<span class="text-slate-600 font-mono text-xs uppercase tracking-widest">05.2022 – 07.2023</span>
+					</div>
+					<div>
+						<h3 class="text-3xl font-serif text-white mb-2">Kodzilla</h3>
+						<p class="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Sr. Frontend Developer</p>
+						<p class="text-slate-400 text-sm leading-relaxed mb-4">Global ilaç devleri için erişilebilirlik (a11y) standartlarını merkeze alan, ölçeklenebilir UI sistemleri tasarladım. Modern JavaScript bileşen mimarisiyle kullanıcı deneyimini teknik mükemmeliyetle birleştirdim.</p>
+						<p class="text-slate-500 text-xs font-bold leading-relaxed border-l-2 border-primary/20 pl-3">
+							<span class="text-primary/60">REFERANSLAR:</span> GSK (GlaxoSmithKline), Novartis, Roche.
+						</p>
+					</div>
+				</div>
+				<div class="md:col-span-7 md:row-span-1 bento-card p-10 flex flex-col justify-between group reveal">
+					<div class="flex justify-between items-start">
+
+						<span class="text-slate-600 font-mono text-sm uppercase tracking-widest">09.2018 – 03.2022</span>
+					</div>
+					<div>
+						<h3 class="text-3xl font-serif text-white mb-2">Related Digital</h3>
+						<p class="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Web Developer</p>
+						<p class="text-slate-400 text-sm leading-relaxed mb-4">Yüksek trafikli platformların teknik optimizasyon süreçlerini yöneterek, grup şirketlerine ait web siteleri için tasarımdan kodun son satırına kadar anahtar teslim WordPress entegrasyonları gerçekleştirdim. İçerik yönetim sistemlerinde ölçeklenebilirliği standart haline getirdim.</p>
+						<p class="text-slate-500 text-xs font-bold leading-relaxed border-l-2 border-primary/20 pl-3">
+							<span class="text-primary/60">REFERANSLAR:</span> Related Digital, Euromsg, Euromsg Express.
+						</p>
+					</div>
+				</div>
+				<div class="md:col-span-12 md:row-span-1 bento-card p-10 flex flex-col justify-between group reveal">
+					<div class="flex justify-between items-start">
+
+						<span class="text-slate-600 font-mono text-xs uppercase tracking-widest">05.2011 – 09.2018</span>
+					</div>
+					<div>
+						<h3 class="text-4xl font-serif text-white mb-2">Madebycat</h3>
+						<p class="text-primary font-bold text-sm uppercase tracking-[0.2em] mb-4">Frontend &amp; Maintenance Team Lead</p>
+						<p class="text-slate-400 leading-relaxed font-light mb-4">10 kişilik bir ekibin teknik vizyonunu şekillendirirken, 'Code Review' standartlarını ve Ar-Ge süreçlerini departman kültürü haline getirdim. Teknik rehberlik ve süreç inovasyonu ile ekip verimliliğini maksimize ettim.</p>
+						<p class="text-slate-500 text-xs font-bold leading-relaxed border-l-2 border-primary/20 pl-3">
+							<span class="text-primary/60">REFERANSLAR:</span> Avivasa, Anadolu Sigorta, Garanti Ödeme Sistemleri, Beymen, Boyner, Denizbank, Doğuş Grubu, Digitürk, Miles&amp;Smiles, Nef, Oyak Çimento, Sabancı Vakfı, The House Cafe.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="mt-20 pt-12 border-t border-white/5 reveal">
+				<h4 class="text-slate-500 font-black uppercase tracking-[0.3em] text-[10px] mb-8">Kariyer Yolculuğunun Öncesi</h4>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+					<div class="group">
+						<span class="text-slate-600 font-mono text-[10px] uppercase tracking-widest block mb-1">11.2008 – 05.2011</span>
+						<h5 class="text-white font-serif text-lg group-hover:text-primary transition-colors">Digital Graphics</h5>
+						<p class="text-slate-500 text-xs font-bold uppercase tracking-wider">HTML Developer, İstanbul</p>
+					</div>
+					<div class="group">
+						<span class="text-slate-600 font-mono text-[10px] uppercase tracking-widest block mb-1">11.2007 – 11.2008</span>
+						<h5 class="text-white font-serif text-lg group-hover:text-primary transition-colors">EkoPC</h5>
+						<p class="text-slate-500 text-xs font-bold uppercase tracking-wider">Web Master, İstanbul</p>
+					</div>
+					<div class="group">
+						<span class="text-slate-600 font-mono text-[10px] uppercase tracking-widest block mb-1">09.2003 – 08.2005</span>
+						<h5 class="text-white font-serif text-lg group-hover:text-primary transition-colors">Güral Porselen</h5>
+						<p class="text-slate-500 text-xs font-bold uppercase tracking-wider">Model Tasarım, Kütahya</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="py-32 px-12 lg:px-24 border-t border-white/5 bg-black" id="arsenal">
+			<div class="grid grid-cols-1 xl:grid-cols-2 gap-24">
+				<div class="reveal">
+					<!-- <p class="text-primary font-black tracking-[0.4em] uppercase mb-4 text-[10px]">Stack &amp; Expertise</p> -->
+					<h2 class="font-serif text-6xl text-white mb-12 italic">Yetenekler</h2>
+					<p class="text-slate-400 text-xl leading-relaxed font-light mb-16">
+						Modern webin sunduğu tüm imkanları, estetik bir kaygı ve mühendislik disipliniyle kullanıyorum. Sürdürülebilir yapılar kurmaya odaklanan her satır kodun bir amacı, her pikselin bir hikayesi olmalı.
+					</p>
+					<div class="space-y-10">
+						<div class="group border-l border-white/10 pl-8 hover:border-primary transition-colors">
+							<h3 class="text-white font-black uppercase tracking-[0.2em] text-sm mb-2 group-hover:text-primary transition-colors" lang="en">Frontend Modern Stack</h3>
+							<p class="text-slate-500 text-sm font-bold uppercase tracking-widest" lang="en">React • Next.js • TypeScript • Tailwind CSS</p>
+						</div>
+						<div class="group border-l border-white/10 pl-8 hover:border-primary transition-colors">
+							<h3 class="text-white font-black uppercase tracking-[0.2em] text-sm mb-2 group-hover:text-primary transition-colors" lang="en">UI Structure & Design Systems</h3>
+							<p class="text-slate-500 text-sm font-bold uppercase tracking-widest" lang="en">Design Systems • Component Libraries • Atomic Design</p>
+						</div>
+						<div class="group border-l border-white/10 pl-8 hover:border-primary transition-colors">
+							<h3 class="text-white font-black uppercase tracking-[0.2em] text-sm mb-2 group-hover:text-primary transition-colors" lang="en">Custom WP &amp; Performance</h3>
+							<p class="text-slate-500 text-sm font-bold uppercase tracking-widest" lang="en">Headless WP • Pug • Webpack • Lighthouse Core Web Vitals</p>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col justify-center reveal">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+						<div class="p-12 bg-background-dark group hover:bg-white/5 transition-colors">
+							<span class="text-primary text-xs font-black uppercase tracking-[0.3em] block mb-6 group-hover:text-white transition-colors" lang="en">Core & UI</span>
+							<ul class="space-y-3 font-bold tracking-tight text-slate-400" lang="en">
+								<li class="group-hover:text-primary transition-colors">HTML5 / CSS3 (SASS)</li>
+								<li class="group-hover:text-primary transition-colors">JavaScript / TypeScript</li>
+								<li class="group-hover:text-primary transition-colors">Tailwind CSS</li>
+								<li class="group-hover:text-primary transition-colors">WordPress Theme Design</li>
+								<li class="group-hover:text-primary transition-colors">UI/UX Integration</li>
+							</ul>
+						</div>
+						<div class="p-12 bg-background-dark group hover:bg-white/5 transition-colors">
+							<span class="text-primary text-xs font-black uppercase tracking-[0.3em] block mb-6 group-hover:text-white transition-colors" lang="en">Frameworks & State</span>
+							<ul class="space-y-3 font-bold tracking-tight text-slate-400" lang="en">
+								<li class="group-hover:text-primary transition-colors">React / Next.js</li>
+								<li class="group-hover:text-primary transition-colors">Custom WP Development</li>
+								<li class="group-hover:text-primary transition-colors">Redux / Context API</li>
+								<li class="group-hover:text-primary transition-colors">Bootstrap</li>
+							</ul>
+						</div>
+						<div class="p-12 bg-background-dark group hover:bg-white/5 transition-colors">
+							<span class="text-primary text-xs font-black uppercase tracking-[0.3em] block mb-6 group-hover:text-white transition-colors" lang="en">Strategy & Workflow</span>
+							<ul class="space-y-3 font-bold tracking-tight text-slate-400" lang="en">
+								<li class="text-primary">Vibe Coding</li>
+								<li class="group-hover:text-primary transition-colors">FFront-End Systems</li>
+								<li class="group-hover:text-primary transition-colors">AI-Driven Dev</li>
+								<li class="group-hover:text-primary transition-colors">Team Leadership</li>
+							</ul>
+						</div>
+						<div class="p-12 bg-background-dark group hover:bg-white/5 transition-colors">
+							<span class="text-primary text-xs font-black uppercase tracking-[0.3em] block mb-6 group-hover:text-white transition-colors" lang="en">Tools & Build</span>
+							<ul class="space-y-3 font-bold tracking-tight text-slate-400" lang="en">
+								<li class="group-hover:text-primary transition-colors">Performance (Lighthouse)</li>
+								<li class="group-hover:text-primary transition-colors">Vite / Webpack</li>
+								<li class="group-hover:text-primary transition-colors">Git / GitHub</li>
+								<li class="group-hover:text-primary transition-colors">GTM / Analytics</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="py-32 px-12 lg:px-24 border-t border-white/5" id="beyond">
+			<div class="flex flex-col lg:flex-row justify-between items-start mb-20 gap-8 reveal">
+				<div class="max-w-xl">
+					<h2 class="font-serif text-6xl text-white mb-4 italic leading-none">Ötesi ve Bilgiler</h2>
+					<p class="text-slate-500 text-lg">Geliştirme süreçlerinden uzaklaştığımda beni besleyen, disiplin ve sabır gerektiren tutkularım.</p>
+				</div>
+			</div>
+			<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+				<div class="group relative overflow-hidden bg-white/5 aspect-[4/5] reveal">
+					<img alt="Tüplü dalış, su altı keşfi ve CMAS deneyimi" loading="lazy" class="w-full h-full object-cover grayscale transition-all duration-700 opacity-40 group-hover:opacity-100 group-hover:scale-105" src="images/scuba.webp" />
+					<div class="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
+						<p class="text-primary font-black text-sm uppercase tracking-[0.3em] mb-2">01</p>
+						<h3 class="text-3xl font-serif text-white mb-2">Derinlik: Scuba Diving</h3>
+						<p class="text-slate-400 text-sm font-medium leading-relaxed">CMAS 3 Yıldız (200+ dalış). Suyun altındaki sessizlikten gelen odaklanma yeteneği ve teknik disiplin.</p>
+					</div>
+				</div>
+				<div class="group relative overflow-hidden bg-white/5 aspect-[4/5] reveal">
+					<img alt="Ölçekli modelleme sanatı ve detaylı maket işçiliği" loading="lazy" class="w-full h-full object-cover grayscale transition-all duration-700 opacity-40 group-hover:opacity-100 group-hover:scale-105" src="images/gundam.webp" />
+					<div class="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
+						<p class="text-primary font-black text-sm uppercase tracking-[0.3em] mb-2">02</p>
+						<h3 class="text-3xl font-serif text-white mb-2">Detay: Scale Modeling </h3>
+						<p class="text-slate-400 text-sm font-medium leading-relaxed">Askeri modellemeye olan ilgimle, weathering teknikleri ve diorama kurgularında detaylara hayat veriyorum.</p>
+					</div>
+				</div>
+				<div class="group relative overflow-hidden bg-white/5 aspect-[4/5] reveal">
+					<img alt="Teknoloji fotoğrafçılığı ve sürekli öğrenme konsepti" loading="lazy" class="w-full h-full object-cover grayscale transition-all duration-700 opacity-40 group-hover:opacity-100 group-hover:scale-105" src="images/gaming.webp" />
+					<div class="absolute inset-0 p-10 flex flex-col justify-end bg-gradient-to-t from-black to-transparent">
+						<p class="text-primary font-black text-sm uppercase tracking-[0.3em] mb-2">03</p>
+						<h3 class="text-3xl font-serif text-white mb-2">Keşif: Teknoloji & Oyun</h3>
+						<p class="text-slate-400 text-sm font-medium leading-relaxed">Oyun dünyasının dinamikleri ve yeni teknolojilerle beslenen, bitmeyen bir dijital merak ve öğrenme iştahı.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="py-32 px-12 lg:px-24 border-t border-white/5 relative overflow-hidden" id="contact">
+			<div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full pointer-events-none"></div>
+			<div class="relative z-10 reveal">
+				<h2 class="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-[96px] text-white leading-none tracking-tighter mb-16">
+					Hadi <span class="italic text-primary">Başlayalım.</span>
+				</h2>
+				<div class="grid grid-cols-1 xl:grid-cols-12 gap-24 xl:gap-24 items-start">
+					<div class="xl:col-span-5">
+						<div class="space-y-8">
+							<p class="text-slate-400 text-xl font-light max-w-md">Bir sonraki büyük projeyi birlikte inşa edelim. Teknik detayları konuşmak veya sadece tanışmak için yazabilirsiniz.</p>
+							<div class="flex gap-8">
+								<a class="text-white hover:text-primary transition-colors font-bold uppercase tracking-[0.2em] text-xs" href="https://www.linkedin.com/in/mbandakcioglu/" target="_blank" rel="noopener noreferrer" lang="en">LinkedIn</a>
+								<a class="text-white hover:text-primary transition-colors font-bold uppercase tracking-[0.2em] text-xs" href="https://github.com/mbandakcioglu/" target="_blank" rel="noopener noreferrer" lang="en">GitHub</a>
+							</div>
+							<a class="group inline-flex items-center gap-4 p-5 sm:p-8 border border-primary/20 hover:border-primary transition-all w-fit max-w-full" data-user="info" data-domain="bandakcioglu.com">
+								<span class="text-white text-base xs:text-lg sm:text-2xl lg:text-3xl font-bold font-serif email-text"></span>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hidden min-[375px]:block w-6 h-6 sm:w-8 sm:h-8 text-primary group-hover:translate-x-2 transition-transform shrink-0"><path fill-rule="evenodd" d="M16.72 7.72a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1 0 1.06l-3.75 3.75a.75.75 0 1 1-1.06-1.06l2.47-2.47H3a.75.75 0 0 1 0-1.5h16.19l-2.47-2.47a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" /></svg>
+							</a>
+						</div>
+					</div>
+					<div class="xl:col-span-7">
+						<form id="contact-form" class="space-y-6 max-w-2xl" novalidate>
+							<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+								<div class="space-y-2 relative pb-6">
+									<label class="text-sm font-black uppercase tracking-[0.3em] text-slate-500 ml-1">Ad ve Soyad</label>
+									<input class="w-full px-6 py-4 text-white font-light text-sm tracking-wide" type="text" id="name"/>
+									<span id="name-error" class="text-xs font-bold text-white bg-red-600 px-2 py-1 hidden absolute bottom-0 left-0 leading-none">Lütfen adınızı giriniz.</span>
+								</div>
+								<div class="space-y-2 relative pb-6">
+									<label class="text-sm font-black uppercase tracking-[0.3em] text-slate-500 ml-1">E-posta</label>
+									<input class="w-full px-6 py-4 text-white font-light text-sm tracking-wide" type="email" id="email"/>
+									<span id="email-error" class="text-xs font-bold text-white bg-red-600 px-2 py-1 hidden absolute bottom-0 left-0 leading-none">Geçerli bir e-posta adresi giriniz.</span>
+								</div>
+							</div>
+							<div class="space-y-2 relative pb-6">
+								<label class="text-sm font-black uppercase tracking-[0.3em] text-slate-500 ml-1">Mesaj</label>
+								<textarea class="w-full px-6 py-4 text-white font-light text-sm tracking-wide min-h-[150px] resize-none" id="message"></textarea>
+								<span id="message-error" class="text-xs font-bold text-white bg-red-600 px-2 py-1 hidden absolute bottom-0 left-0 leading-none">Lütfen mesajınızı yazınız.</span>
+							</div>
+
+							<input type="hidden" id="recaptchaResponse" name="recaptchaResponse">
+
+							<button type="submit" class="bg-primary text-black hover:bg-white px-12 py-5 font-black uppercase text-sm tracking-[0.4em] transition-all flex items-center justify-center gap-4 w-full md:w-auto group">
+								Gönder 
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 group-hover:translate-x-1 transition-transform -rotate-45"><path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" /></svg>
+							</button>
+							
+							<div id="form-success" class="hidden mt-6 p-4 bg-green-500/20 border border-green-500 text-green-400 font-bold text-center text-sm">Mesajınız başarıyla gönderildi.</div>
+							<div id="form-error" class="hidden mt-6 p-4 bg-red-600/20 border border-red-600 text-white font-bold text-center text-sm"></div>
+
+							<p class="text-xs text-slate-500 mt-4 leading-tight text-center lg:text-left">
+								Bu site reCAPTCHA ile korunmaktadır ve Google
+								<a href="https://policies.google.com/privacy" target="_blank" class="underline hover:text-white">Gizlilik Politikası</a> ve
+								<a href="https://policies.google.com/terms" target="_blank" class="underline hover:text-white">Hizmet Şartları</a> geçerlidir.
+							</p>
+						</form>
+					</div>
+				</div>
+				<div class="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between text-slate-600 text-[10px] font-black uppercase tracking-[0.4em]">
+					<p>©2026 MURAT BANDAKÇIOĞLU. HER HAKKI SAKLIDIR.</p>
+					<div class="flex gap-8 mt-4 md:mt-0">
+						<span>İSTANBUL</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</main>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdIoWIsAAAAAERS_bmzsnSb8U99u88DBGOWb1py" defer></script>
+	<script src="js/script.js?v=2"></script>
+</body>
+
+</html>
