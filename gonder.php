@@ -1,6 +1,7 @@
 <?php
 // Strict error reporting for debugging (in production logged, not displayed)
-ini_set('display_errors', 0);
+
+ini_set('display_errors', 1);   // GEÇİCİ - hata ayıklama
 ini_set('log_errors', 1);
 error_reporting(E_ALL);
 
@@ -112,24 +113,45 @@ if (!$result || !$result->success || $result->score < 0.5) {
 $mail = new PHPMailer(true);
 
 try {
-    // Server settings
-    $mail->isSMTP();                                            // Send using SMTP
-    $mail->Host       = SMTP_HOST;                              // Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = SMTP_USERNAME;                          // SMTP username
-    $mail->Password   = SMTP_PASSWORD;                          // Hosting (cPanel) Password for this email
-    
-    if (defined('SMTP_SECURE') && SMTP_SECURE === 'tls') {
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->CharSet = 'UTF-8';                                   // Set character encoding
+
+    if (defined('MAIL_TRANSPORT') && MAIL_TRANSPORT === 'mail') {
+        // PHP mail() - paylaşımlı hostingde giden SMTP portları kapalıysa en uyumlu yöntem
+        $mail->isMail();
+    } elseif (defined('MAIL_TRANSPORT') && MAIL_TRANSPORT === 'sendmail') {
+        // Sunucunun sendmail binary'si (popen gerektirir; disable_functions ile kapalı olabilir)
+        $mail->isSendmail();
     } else {
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;        // Enable explicit TLS encryption
+        // Server settings (SMTP)
+        $mail->isSMTP();                                        // Send using SMTP
+        $mail->Host       = SMTP_HOST;                          // Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                               // Enable SMTP authentication
+        $mail->Username   = SMTP_USERNAME;                      // SMTP username
+        $mail->Password   = SMTP_PASSWORD;                      // App Password / mailbox password
+
+        if (defined('SMTP_SECURE') && SMTP_SECURE === 'tls') {
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        } else {
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;    // Enable explicit TLS encryption
+        }
+
+        $mail->Port       = SMTP_PORT;                          // TCP port to connect to
+
+        $mail->SMTPOptions = [
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            ],
+            // Sunucuda IPv6 rotası yoksa "Network is unreachable" hatasını önler (IPv4'e zorlar)
+            'socket' => [
+                'bindto' => '0:0'
+            ]
+        ];
     }
 
-    $mail->Port       = SMTP_PORT;                              // TCP port to connect to
-    $mail->CharSet    = 'UTF-8';                                // Set character encoding
-
     // Recipients
-    $mail->setFrom(SMTP_USERNAME, 'Bandakcioglu.com Form');
+    $mail->setFrom(defined('MAIL_FROM') ? MAIL_FROM : SMTP_USERNAME, 'Bandakcioglu.com Form');
     
     // Add multiple recipients if provided
     $emails = explode(',', RECIPIENT_EMAILS);
@@ -154,10 +176,10 @@ try {
 } catch (Exception $e) {
     // Log error internally
     error_log("Mail Error: " . $mail->ErrorInfo);
-    // Send generic error to user
-    sendResponse(false, 'Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyiniz.');
-} catch (\Exception $e) {
+    // Send detailed error to user for debugging
+    sendResponse(false, 'Mesaj gönderilemedi: ' . ($mail->ErrorInfo ?: $e->getMessage()));
+} catch (\Throwable $e) {
     // Log generic error
     error_log("General Error: " . $e->getMessage());
-    sendResponse(false, 'Bir sunucu hatası oluştu.');
+    sendResponse(false, 'Bir sunucu hatası oluştu: ' . $e->getMessage());
 }
